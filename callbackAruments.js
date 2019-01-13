@@ -137,3 +137,98 @@ function map(arr, callback) {
   } 
   console.log(newArr)
 }
+
+
+// Adsding loaded dice
+
+// loop through the array
+// return the first character in the array
+// display the characters 1 increment at a time
+
+
+function makeLoadedDie() {
+  var list = [5, 4, 6, 1, 6, 4, 2, 3, 3, 5];
+  let num = 0;
+  
+
+  return function () {
+num++;
+   return list[num -1];
+
+
+  };
+}
+
+var rollLoadedDie = makeLoadedDie();
+
+console.log(rollLoadedDie());  // 5
+console.log(rollLoadedDie());  // 4
+console.log(rollLoadedDie());
+
+
+// loop through the array
+// return the first character in the array
+// display the characters 1 increment at a time
+
+
+function makeLoadedDie() {
+  var list = [5, 4, 6, 1, 6, 4, 2, 3, 3, 5];
+  let num = 0;
+  
+
+  return function () {
+num++;
+   return list[num -1];
+
+
+  };
+}
+
+var rollLoadedDie = makeLoadedDie();
+
+console.log(rollLoadedDie());  // 5
+console.log(rollLoadedDie());  // 4
+console.log(rollLoadedDie());
+
+
+//set up a variable called count to hold x
+//set up a variable called result with a starting value
+//load result variable with count;
+// work with result to form if statements 
+// if result hit's 0 console log Blast Off!
+// if result is -1 log Rockets already gone, bud!
+// if result is -2 log Rockets already gone, bud!
+// else log the count values
+
+
+var countdownGenerator = function (x) {
+var count = x;
+var result = 0;
+
+return function () {
+
+result = count--;
+//return result;
+if(result === 0){
+return "Blast Off!"
+}
+
+if(result <= -1){
+return "Rockets already gone, bub!"
+}
+else return "T-minus " + result + "...";
+
+  };
+
+  
+};
+
+var countdown = countdownGenerator(3);
+console.log(countdown()); // T-minus 3...
+console.log(countdown()); // T-minus 2...
+console.log(countdown()); // T-minus 1...
+console.log(countdown()); // Blast Off!
+console.log(countdown()); // Rockets already gone, bub!
+console.log(countdown()); // Rockets already gone, bub!
+
+
